@@ -1,0 +1,6 @@
+C:\Users\SEBASTIAN\source\repos\DWApi\EntitiesLayer\bin\Debug\EntitiesLayer.dll
+C:\Users\SEBASTIAN\source\repos\DWApi\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
+C:\Users\SEBASTIAN\source\repos\DWApi\EntitiesLayer\obj\Debug\EntitiesLayer.csproj.AssemblyReference.cache
+C:\Users\SEBASTIAN\source\repos\DWApi\EntitiesLayer\obj\Debug\EntitiesLayer.csproj.CoreCompileInputs.cache
+C:\Users\SEBASTIAN\source\repos\DWApi\EntitiesLayer\obj\Debug\EntitiesLayer.dll
+C:\Users\SEBASTIAN\source\repos\DWApi\EntitiesLayer\obj\Debug\EntitiesLayer.pdb

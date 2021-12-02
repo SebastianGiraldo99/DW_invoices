@@ -1,0 +1,14 @@
+C:\Users\SEBASTIAN\source\repos\DWApi\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\SEBASTIAN\source\repos\DWApi\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\SEBASTIAN\source\repos\DWApi\DataAccessLayer\bin\Debug\EntitiesLayer.dll
+C:\Users\SEBASTIAN\source\repos\DWApi\DataAccessLayer\bin\Debug\EntitiesLayer.pdb
+C:\Users\SEBASTIAN\source\repos\DWApi\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\SEBASTIAN\source\repos\DWApi\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\SEBASTIAN\source\repos\DWApi\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\Users\SEBASTIAN\source\repos\DWApi\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\SEBASTIAN\source\repos\DWApi\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\SEBASTIAN\source\repos\DWApi\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\SEBASTIAN\source\repos\DWApi\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\SEBASTIAN\source\repos\DWApi\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\SEBASTIAN\source\repos\DWApi\DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\SEBASTIAN\source\repos\DWApi\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml

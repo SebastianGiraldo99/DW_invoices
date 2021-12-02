@@ -1,0 +1,62 @@
+
+<dx-form id="form" [formData]="invoice">
+    <dxi-item itemType="group" cssClass="second-group" [colCount]="4">
+        <dxi-item
+          dataField="IdClient"
+          [label]="{text: 'Cliente'}"
+          editorType="dxSelectBox"
+          [editorOptions]="{items: clients, displayExpr:'FirstName', valueExpr:'IdClient'}"
+        ></dxi-item>
+        <dxi-item
+          dataField="IdProduct"
+          [label]="{text: 'Producto'}"
+          editorType="dxSelectBox"
+          [editorOptions]="{ items: products, displayExpr:'Name', valueExpr:'IdProduct' }"
+        ></dxi-item>
+        <dxi-item dataField="Cantidad" [label]="{ text: 'Cantidad' }"
+        editorType="dxNumberBox"></dxi-item>
+        <dxi-item
+          dataField="IdSaller"
+          [label]="{text: 'Vendedor'}"
+          editorType="dxSelectBox"
+          [editorOptions]="{ items: sellers, displayExpr:'FirtsName', valueExpr:'IdSaller' }"
+        ></dxi-item>
+      <dxi-item itemType="group">
+      </dxi-item>
+    </dxi-item>
+    <dxi-item>
+      <div *dxTemplate>
+        <dx-button (onClick)="save($event)" text="Save" type="success"></dx-button>
+      </div>
+    </dxi-item>
+  </dx-form>
+
+
+
+<h2>Lista de facturas</h2>
+  
+
+<dx-data-grid
+  id="gridContainer"
+  [dataSource]="invoices"
+  [showBorders]="true"
+>
+  <dxi-column dataField="IdInvoice" [width]="70" caption="Id Factura"></dxi-column>
+  <dxi-column dataField="Date"></dxi-column>
+  <dxi-column dataField="Client.FirstName" caption="Nombre Cliente"></dxi-column>
+  <dxi-column dataField="Saller.FirtsName" caption="Nombre Vendedor"></dxi-column>
+  <dxi-column dataField="" cellTemplate="product_template" caption="Producto y precio"></dxi-column>
+  <dxi-column dataField="" cellTemplate="amount" caption="Cantidad"></dxi-column>
+
+  <div *dxTemplate="let data of 'product_template'">
+    <div *ngFor="let item of data.data.Details">
+      {{item.Product.Name}}- {{item.Product.Price}}
+    </div>
+  </div>
+  <div *dxTemplate="let data of 'amount'">
+    <div *ngFor="let item of data.data.Details">
+      {{item.Ammount}}
+    </div>
+  </div>
+
+</dx-data-grid>

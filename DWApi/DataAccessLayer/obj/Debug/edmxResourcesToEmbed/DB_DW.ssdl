@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_DWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CATEGORY">
+    <Key>
+      <PropertyRef Name="id_category" />
+    </Key>
+    <Property Name="id_category" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CLIENT">
+    <Key>
+      <PropertyRef Name="id_client" />
+    </Key>
+    <Property Name="id_client" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="first_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="last_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" />
+    <Property Name="dob" Type="datetime" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DETAIL_INVOICE">
+    <Key>
+      <PropertyRef Name="id_detail" />
+      <PropertyRef Name="id_invoice" />
+    </Key>
+    <Property Name="id_detail" Type="int" Nullable="false" />
+    <Property Name="id_invoice" Type="int" Nullable="false" />
+    <Property Name="amount" Type="int" />
+    <Property Name="id_product" Type="int" />
+  </EntityType>
+  <EntityType Name="INVOICE">
+    <Key>
+      <PropertyRef Name="id_invoice" />
+    </Key>
+    <Property Name="id_invoice" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_client" Type="int" />
+    <Property Name="date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="id_product" />
+    </Key>
+    <Property Name="id_product" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="stock" Type="int" />
+    <Property Name="id_category" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK__DETAIL_IN__id_in__2E1BDC42">
+    <End Role="INVOICE" Type="Self.INVOICE" Multiplicity="1" />
+    <End Role="DETAIL_INVOICE" Type="Self.DETAIL_INVOICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="INVOICE">
+        <PropertyRef Name="id_invoice" />
+      </Principal>
+      <Dependent Role="DETAIL_INVOICE">
+        <PropertyRef Name="id_invoice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DETAIL_IN__id_pr__2F10007B">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="0..1" />
+    <End Role="DETAIL_INVOICE" Type="Self.DETAIL_INVOICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="id_product" />
+      </Principal>
+      <Dependent Role="DETAIL_INVOICE">
+        <PropertyRef Name="id_product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__INVOICE__id_clie__2B3F6F97">
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="0..1" />
+    <End Role="INVOICE" Type="Self.INVOICE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENT">
+        <PropertyRef Name="id_client" />
+      </Principal>
+      <Dependent Role="INVOICE">
+        <PropertyRef Name="id_client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRODUCT__id_cate__286302EC">
+    <End Role="CATEGORY" Type="Self.CATEGORY" Multiplicity="0..1" />
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORY">
+        <PropertyRef Name="id_category" />
+      </Principal>
+      <Dependent Role="PRODUCT">
+        <PropertyRef Name="id_category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_DWModelStoreContainer">
+    <EntitySet Name="CATEGORY" EntityType="Self.CATEGORY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CLIENT" EntityType="Self.CLIENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DETAIL_INVOICE" EntityType="Self.DETAIL_INVOICE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="INVOICE" EntityType="Self.INVOICE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__DETAIL_IN__id_in__2E1BDC42" Association="Self.FK__DETAIL_IN__id_in__2E1BDC42">
+      <End Role="INVOICE" EntitySet="INVOICE" />
+      <End Role="DETAIL_INVOICE" EntitySet="DETAIL_INVOICE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DETAIL_IN__id_pr__2F10007B" Association="Self.FK__DETAIL_IN__id_pr__2F10007B">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="DETAIL_INVOICE" EntitySet="DETAIL_INVOICE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__INVOICE__id_clie__2B3F6F97" Association="Self.FK__INVOICE__id_clie__2B3F6F97">
+      <End Role="CLIENT" EntitySet="CLIENT" />
+      <End Role="INVOICE" EntitySet="INVOICE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRODUCT__id_cate__286302EC" Association="Self.FK__PRODUCT__id_cate__286302EC">
+      <End Role="CATEGORY" EntitySet="CATEGORY" />
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

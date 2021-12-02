@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_DWModelStoreContainer" CdmEntityContainer="DB_DWEntities">
+    <EntitySetMapping Name="CATEGORY">
+      <EntityTypeMapping TypeName="DB_DWModel.CATEGORY">
+        <MappingFragment StoreEntitySet="CATEGORY">
+          <ScalarProperty Name="id_category" ColumnName="id_category" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENT">
+      <EntityTypeMapping TypeName="DB_DWModel.CLIENT">
+        <MappingFragment StoreEntitySet="CLIENT">
+          <ScalarProperty Name="id_client" ColumnName="id_client" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DETAIL_INVOICE">
+      <EntityTypeMapping TypeName="DB_DWModel.DETAIL_INVOICE">
+        <MappingFragment StoreEntitySet="DETAIL_INVOICE">
+          <ScalarProperty Name="id_detail" ColumnName="id_detail" />
+          <ScalarProperty Name="id_invoice" ColumnName="id_invoice" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="id_product" ColumnName="id_product" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INVOICE">
+      <EntityTypeMapping TypeName="DB_DWModel.INVOICE">
+        <MappingFragment StoreEntitySet="INVOICE">
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="id_saller" ColumnName="id_saller" />
+          <ScalarProperty Name="id_invoice" ColumnName="id_invoice" />
+          <ScalarProperty Name="id_client" ColumnName="id_client" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCT">
+      <EntityTypeMapping TypeName="DB_DWModel.PRODUCT">
+        <MappingFragment StoreEntitySet="PRODUCT">
+          <ScalarProperty Name="id_product" ColumnName="id_product" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="id_category" ColumnName="id_category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SALLER">
+      <EntityTypeMapping TypeName="DB_DWModel.SALLER">
+        <MappingFragment StoreEntitySet="SALLER">
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="id_saller" ColumnName="id_saller" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
